@@ -1,0 +1,117 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,setspace,tabto,fancyhdr,sectsty,framed}
+\usepackage{lipsum}
+\usepackage[shortlabels]{enumitem}
+\usepackage[nobreak=true]{mdframed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     DO NOT CHANGE ANYTHING ABOVE THIS LINE     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     FILE DATA     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Personal Info
+\newcommand{\name}{Jane Doe} %student Name
+\newcommand{\ID}{0123456789} %student ID
+
+
+
+%%% Class Data:
+
+\newcommand{\classNumber}{CS 00} %class number
+\newcommand{\className}{Document Template} %class name
+\newcommand{\semester}{Spring 0000} %semester
+\newcommand{\professor}{Professors} %professor(s)
+\newcommand*{\hwnum}{0} %homework number
+
+
+
+%%% Options:
+\newcommand*{\solnboxes}{} %comment to turn off solution boxes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     DO NOT CHANGE ANYTHING BELOW THIS LINE     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Question}[1]{\section{#1}}
+\newenvironment{Parts}{\begin{enumerate}[label=(\alph*)]}{\end{enumerate}}
+\newcommand{\Part}{\item}
+\setlength\parindent{0pt}
+\allsectionsfont{\fontfamily{lmdh}\selectfont}
+
+\newcommand{\ttab}[1]{\tabto{#1}}
+\newcommand{\varhrulefill}[1][0.4pt]{\leavevmode\leaders\hrule height#1\hfill\kern0pt}
+\newcommand{\CSfont}{\fontsize{14}{14}\fontfamily{lmdh}\selectfont}
+\newcommand{\CSFont}{\fontsize{22}{14}\fontfamily{lmdh}\selectfont}
+\newcommand{\header}{
+	\varhrulefill[5pt]
+	
+	\vspace{8pt}
+	
+	{\CSfont \classNumber \ttab{96pt} \className}
+	
+	\vspace{8pt}
+	
+	{\CSfont \semester \ttab{96pt} \professor \hfill \CSFont HW \hwnum}
+	
+	\vspace{2pt}
+
+	\varhrulefill[5pt]\\
+}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\lfoot{\small \classNumber, \className, HW \hwnum}
+\rfoot{\small \thepage}
+\cfoot{}
+
+
+\ifdefined\solnboxes
+\newenvironment{Answer}{\vspace{10pt}\color{blue}\begin{framed}\textbf{Solution}\\}{\end{framed}\pagebreak[3]}
+\else
+\newenvironment{Answer}{\color{blue}\textbf{Solution}\\\vspace{10pt}}{\pagebreak[3]}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     BEGIN DOCUMENT     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	\header	
+	\begin{flushleft}
+		{\large Name: \ttab{60pt} \name} \\
+		{\large ID: \ttab{60pt} \ID}
+	\end{flushleft}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%     BEGIN QUESTIONS     %%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\Question{Example 1}
+	\lipsum[1]
+	\begin{Answer}
+		\lipsum[2]
+	\end{Answer}
+	
+	\Question{Example 2}
+	\lipsum[3]
+	\begin{Answer}
+		\lipsum[4]
+	\end{Answer}
+	
+	\Question{Example 3}
+	\lipsum[5]
+	\begin{Parts}
+		\Part \lipsum[6]
+		\begin{Answer}
+			\lipsum[7]
+		\end{Answer}
+		\Part \lipsum[8]
+		\begin{Answer}
+			\lipsum[9-20]
+		\end{Answer}
+	\end{Parts}
+\end{document}

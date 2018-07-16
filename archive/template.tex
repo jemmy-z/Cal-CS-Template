@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage[left=1in,right=1in,top=1in,bottom=2in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,setspace,tabto,fancyhdr, sectsty, framed}
+\usepackage[shortlabels]{enumitem}
+\usepackage[nobreak=true]{mdframed}
+
+\newcommand*{\Question}[1]{\section{#1}}
+\newenvironment{Parts}{\begin{enumerate}[label=(\alph*)]}{\end{enumerate}}
+\newcommand*{\Part}{\item}
+\headheight=75pt
+\sectionfont{\Large\fontfamily{lmdh}\selectfont}
+\setlength\parindent{0pt}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     DO NOT CHANGE ANYTHING ABOVE THIS LINE     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Things to change:
+\newcommand{\classN}{CS00} %class number
+\newcommand{\classNa}{Document Template} %class name
+\newcommand{\sem}{Spring 0000} %semester
+\newcommand{\prof}{Professors} %professor(s)
+\newcommand*{\hwnum}{0} %homework number
+\newcommand*{\solnboxes}{} %commend to turn off solution boxes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     DO NOT CHANGE ANYTHING BELOW THIS LINE     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{6pt}
+\chead{\rule{\textwidth}{6pt} \vspace{20pt}\\}
+\lhead{\setstretch{1.05}\Large\fontfamily{lmdh}\selectfont
+	\classN	\tabto{96pt} \classNa\smallskip\\
+	\sem \tabto{96pt} \prof}
+\rhead{\huge     \fontfamily{lmdh}\selectfont     HW \hwnum}
+\lfoot{\small \classN, \classNa, HW \hwnum}
+\rfoot{\small \thepage}
+\cfoot{}
+
+\ifdefined\solnboxes
+\newenvironment{Answer}{\newline\vspace{10pt}\begin{mdframed}\color{blue}\textbf{Solution}\\}{\end{mdframed}\vfill\pagebreak[3]}
+\else
+\newenvironment{Answer}{\color{blue}\newline\textbf{Solution}\\\vspace{10pt}}{\vfill\pagebreak[3]}
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     DOCUMENT BEGINS HERE     %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	\begin{center}
+		Jemmy Zhou \\ % Name
+		ID: 0123456789 % ID
+	\end{center}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%     BEGIN QUESTIONS     %%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\Question{Example 1}
+	Write your name.
+	\begin{Answer}
+		Jemmy Zhou
+	\end{Answer}
+	
+	\Question{Example 2}
+	What is $1 + 1$?
+	\begin{Answer}
+		2
+	\end{Answer}
+	
+	\Question{Example 3}
+	\begin{Parts}
+		\Part What school do you go to?
+		\begin{Answer}
+			U.C. Berkeley
+		\end{Answer}
+		\Part What class is this?
+		\begin{Answer}
+			Not a class.
+		\end{Answer}
+	\end{Parts}
+\end{document}
